@@ -53,7 +53,6 @@ import {changeCanvasSize} from '../actions';
             <article className="canvasContainer">
                 <div> valoarea selectata:   - {size}</div>
                 {this.displayCanvas(size, colorRGBA)}  
-                
             </article>
         </div>
         
