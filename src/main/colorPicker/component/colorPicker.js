@@ -61,7 +61,7 @@ class SketchColorPicker extends React.Component {
         },
       },
     });
-    console.log("!!!", color.r, color.g, color.b, color.a);
+    //console.log("!!!", color.r, color.g, color.b, color.a);
     return (
         
 
@@ -87,9 +87,10 @@ class SketchColorPicker extends React.Component {
 
 
 function mapStateToProps(state) {
-    console.log("MMM", state.ChangeColor.color);
+   // console.log("MMM", state.ChangeColor.color);
     return {
-        color : state.ChangeColor.color
+        color : state.ChangeColor.color, 
+        //selectedCell: state.
     }
 }
 
