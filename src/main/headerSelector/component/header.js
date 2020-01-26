@@ -34,7 +34,7 @@ import {changeCanvasSize} from '../actions';
 
 
 function mapStateToProps(state) {
-    console.log(state);
+   // console.log(state);
     return {
         size : state.ChangeCanvasSize.size
     }

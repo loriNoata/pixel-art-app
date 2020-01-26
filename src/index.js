@@ -10,12 +10,12 @@ import * as serviceWorker from './serviceWorker';
 
 import ChangeCanvasSize  from '../src/main/headerSelector/reducer'; 
 import ChangeColor from '../src/main/colorPicker/reducer'; 
-// import LogginReducer from './containers/reducers/loggInReducer'; 
+import SetCells from '../src/main/canvasArea/reducer'; 
 
 const rootReducers = combineReducers({
-  ChangeCanvasSize: ChangeCanvasSize,
+    ChangeCanvasSize: ChangeCanvasSize,
     ChangeColor: ChangeColor, 
-    // LogginReducer: LogginReducer
+    SetCells: SetCells
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
