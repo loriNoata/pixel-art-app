@@ -1,21 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
 import App from './App';
+ 
 
 import { Provider } from 'react-redux'; 
 import {createStore, combineReducers, compose, applyMiddleware } from 'redux';
 
 import * as serviceWorker from './serviceWorker';
 
-import ChangeCanvasSize  from '../src/main/headerSelector/reducer'; 
-import ChangeColor from '../src/main/colorPicker/reducer'; 
-import SetCells from '../src/main/canvasArea/reducer'; 
+// import ChangeCanvasSize  from '../src/main/headerSelector/reducer'; 
+// import ChangeColor from '../src/main/colorPicker/reducer'; 
+// import SetCells from '../src/main/canvasArea/reducer'; 
+
+import ChangeStep from '../src/antDesign/Steps/reducer'; 
+import SaveInputValues from '../src/antDesign/fundingAgent/reducer'; 
 
 const rootReducers = combineReducers({
-    ChangeCanvasSize: ChangeCanvasSize,
-    ChangeColor: ChangeColor, 
-    SetCells: SetCells
+    ChangeStep: ChangeStep, 
+    SaveInputValues: SaveInputValues
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

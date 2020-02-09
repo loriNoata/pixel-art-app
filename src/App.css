@@ -1,8 +1,7 @@
-.App {
-  text-align: center;
-}
-
-
+ /*.App {
+  text-align: center; 
+ 
+}*/
 
 .App-header {
   background-color: #282c34;
@@ -13,6 +12,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-bottom: 5vh; 
 }
 
 .App-link {
@@ -74,6 +74,30 @@ ul.canvas-32 li {
   height: 25px;
 }
 
-/* .sketch-picker {
-  float: left; 
-} */
+.custom-verticalContainerSteps {
+  width: 25vw;
+  height: 40vh;
+  padding: 3vh;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #98a4b0;
+  margin: 0 4vh;
+}
+
+ 
+.custom-verticalContainerSteps .ant-steps-item-container {
+height: 60px; 
+}
+
+.participant-details-content {
+  display: inline-block;
+  vertical-align: top;
+  width: 60vw; 
+  height: 40vh; 
+  background-color: rgba(245, 246, 247, 1);
+  padding: 3vh;
+}
+
+.participant-details-content .ant-input{
+  width: 50vw; 
+}
