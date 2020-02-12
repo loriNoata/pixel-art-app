@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
-import { Switch, InputNumber, Input, Form, Divider, Icon, Button} from 'antd';
+import { Cascader , InputNumber, Input, Form, Divider, Icon, Button} from 'antd';
 import { saveInputValues } from '../action'; 
 import { changeStep } from '../../Steps/action'; 
 const FormItem = Form.Item; 
@@ -9,26 +9,28 @@ class ParticipantDetails extends Component {
     state = {
         current: 0,
         formItems: [{
-            field: "userName", 
+            field: "Name", 
             id: 1,
             required: true, 
-            message: 'Please input your username!', 
+            message: 'Please input your username, this field is required', 
             iconImg: 'user', 
-            placeholder: 'Username'
-        }, 
-        {
-            field: "id", 
-            id: 2, 
-            required: true, 
-            message: 'Please input your id!', 
-            iconImg: 'lock', 
-            placeholder: 'id'
-        }], 
+            placeholder: 'Name', 
+            inputType : 'input'
+         // }, 
+        // {
+        //     field: "Identifier", 
+        //     id: 2, 
+        //     required: true, 
+        //     message: 'Length should be 9 characters. Should be a number', 
+        //     iconImg: 'lock', 
+        //     placeholder: 'id', 
+        //     inputType : 'inputNumber'
+         }], 
 
     };
 
-    onChange = (checked) => {
-        console.log(`switch to ${checked}`);
+    onChange = (value) => {
+        console.log(`switch to ${value}`);
     }
 
     handleSubmit = e => {
@@ -39,8 +41,6 @@ class ParticipantDetails extends Component {
             this.props.onSaveInputValues(values, this.state.current + 1); 
           }
         });
-
-         
     };
 
    
@@ -48,29 +48,48 @@ class ParticipantDetails extends Component {
     displayFormItem = item => {
         const { getFieldDecorator } = this.props.form;
         return( 
-            <div key={item.id}>
+            <React.Fragment>
                 <FormItem> 
                     {getFieldDecorator(item.field, {
                         rules: [{ required: item.required, message: item.message }],
                         })(
-                        <Input prefix={<Icon type={item.iconImg} style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder={item.message} />
+                    <Input prefix={<Icon type={item.iconImg} style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder={item.message} />
                         )}
                 </FormItem> 
-            </div>
+                </ React.Fragment>
         )
     }
 
     render() { 
+        const options = [
+            {
+              value: 'FinancialInstitution',
+              label: 'FinancialInstitution',
+            },
+            {
+                value: 'TPSP',
+                label: 'TPSP',
+            },
+            {
+                value: 'FundingAgent',
+                label: 'Funding Agent',
+            }];
+
+
         return(
             <div>
-                <h1> Participant Details </h1>
+                <h1> Participant Submission </h1>
                 <Divider />
-                <span>Using a founding agent: </span>  
+                <span>Type </span>  
                 
-                <Switch  onChange={this.onChange} />    {/* defaultChecked */}
-                <Divider />
-                <Form  className="login-form">
-                    {this.state.formItems.map(this.displayFormItem)}
+                  
+
+               
+                <Form  layout="inline" className="login-form">
+                    <Cascader  options={options} onChange={this.onChange} placeholder="Please select" />  
+                  {this.state.formItems.map(this.displayFormItem)}   
+                 
+                    <InputNumber  min={9} max={9} defaultValue={''} onChange={this.onChangeInputNumber}  />
                 </Form>
             </div>
         )

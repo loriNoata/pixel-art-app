@@ -1,15 +1,19 @@
- /*.App {
-  text-align: center; 
+  .App {
+  margin: 0 5vw; 
  
-}*/
+} 
+ 
+
+
+
 
 .App-header {
   background-color: #282c34;
   min-height: 10vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
   margin-bottom: 5vh; 
@@ -26,62 +30,14 @@
 }
 
 
-ul {
-  display: grid;
-  grid-gap: 0;
-  margin: 0 auto;
-  padding: 0;
-  border-right:1px solid black;
-  border-bottom: 1px solid black; 
-}
-
-ul.canvas-8 {
-  width: 328px; /* 40x8 = 320px + 8px */
-  grid-template-columns: repeat(8, 1fr);
-}
-
-ul.canvas-12 {
-  width:492px; /* 40x12 = 480px + 12px */
-  grid-template-columns: repeat(12, 1fr);
-}
-
-ul.canvas-16 {
-  width: 656px; /* 40x16 = 640px + 16px */
-  grid-template-columns: repeat(16, 1fr);
-}
-
-ul.canvas-32 {
-  width:832px; /* 25x32 = 800px + 32px */
-  grid-template-columns: repeat(32, 1fr);
-}
-
-li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  margin-left: 0;
-  border-top: 1px solid black;
-  border-left: 1px solid black;
-  width: 40px;
-  height: 40px;
-}
-
-
-
-ul.canvas-32 li {
-  width: 25px;
-  height: 25px;
-}
-
 .custom-verticalContainerSteps {
-  width: 25vw;
+  width: 27vw;
   height: 40vh;
-  padding: 3vh;
+  padding: 3vw;
   display: inline-block;
   vertical-align: top;
   border: 1px solid #98a4b0;
-  margin: 0 4vh;
+  margin: 0 3vw 0 0;
 }
 
  
@@ -93,11 +49,40 @@ height: 60px;
   display: inline-block;
   vertical-align: top;
   width: 60vw; 
-  height: 40vh; 
+  min-height: 40vh; 
   background-color: rgba(245, 246, 247, 1);
-  padding: 3vh;
+  padding: 2vw;
 }
 
 .participant-details-content .ant-input{
   width: 50vw; 
+}
+
+input#Name {
+  width:20vw; 
+  display: inline-block; float: left; 
+}
+
+form .ant-select, form .ant-cascader-picker{
+  width: 15vw !important;  
+  display: inline-block; float: left; 
+  margin: 0 20px 0 0; 
+}
+
+.ant-input-number{
+  width: 15vw !important; 
+}
+
+
+.iconWrraper{
+  width: 20vw;
+  height: 10vh; 
+  position: absolute; 
+  right:5vw; 
+  line-height: 10vh; ;
+  font-size: 18px;
+}
+
+.iconWrraper span {
+  padding: 0 15px; 
 }

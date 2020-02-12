@@ -7,14 +7,15 @@ import './App.css';
 //import SketchColorPicker from './main/colorPicker/component/colorPicker'; 
 import StepsCount from './antDesign/Steps/component/steps'
 import FundingAgent from './antDesign/fundingAgent/component/fundingAgent'
+import HeaderView from './antDesign/header/header'
  
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
-      
-    <StepsCount />  
-    <FundingAgent />
+     
+        <HeaderView />
+        <StepsCount />  
+        <FundingAgent />
  
     </div>
   );

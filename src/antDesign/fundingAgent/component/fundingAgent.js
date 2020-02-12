@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; 
-import { Switch, InputNumber, Input, Form, Divider, Icon, Button} from 'antd';
+import { Form,  Button} from 'antd';
 import { saveInputValues } from '../action'; 
 import { changeStep } from '../../Steps/action'; 
 import ParticipantDetails  from './participantDetails';
@@ -10,23 +10,6 @@ const FormItem = Form.Item;
 class FundingAgent extends Component {
     state = {
         current: 0,
-        formItems: [{
-            field: "userName", 
-            id: 1,
-            required: true, 
-            message: 'Please input your username!', 
-            iconImg: 'user', 
-            placeholder: 'Username'
-        }, 
-        {
-            field: "id", 
-            id: 2, 
-            required: true, 
-            message: 'Please input your id!', 
-            iconImg: 'lock', 
-            placeholder: 'id'
-        }], 
-
     };
 
  
@@ -51,7 +34,7 @@ class FundingAgent extends Component {
             <div className="participant-details-content">
 
                 {  this.props.current === 0  &&  <ParticipantDetails />  } 
-                {  this.props.current === 1  && <SettlementDetails />}
+                {  this.props.current === 1  &&  <SettlementDetails />}
                 {  this.props.current === 2  && <div> pas 2</div>}
                 {  this.props.current === 3  && <div> You compleate everything</div>}
                     
